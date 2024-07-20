@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACKJACK</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="titulo">
+        BLACKJACK
+    </header>
+
+    <!-- Menú Inicial -->
+    <div id="menuInicial" class="container mt-3">
+        <div class="row">
+            <div class="col text-center">
+                <h2>Seleccione su <br> Modo de Juego</h2>
+                <label for="numJugadores">Número de jugadores:</label>
+                <select id="numJugadores" class="form-control w-25 mx-auto">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" id="contraCPU">
+                    <label class="form-check-label" for="contraCPU">Jugador VS CPU</label>
+                </div>
+                <button id="btnIniciarJuego" class="btn btn-success mt-3">Iniciar Juego</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interfaz del Juego -->
+    <div id="interfazJuego" class="d-none">
+        <div class="row mt-2">
+            <div class="col text-center">
+                <button id="btnNuevo" class="btn btn-danger">Nuevo juego</button>
+                <button id="btnPedir" class="btn btn-primary" disabled>Pedir carta</button>
+                <button id="btnDetener" class="btn btn-primary" disabled>Detener</button>
+            </div>
+        </div>
+        <div class="row container">
+            <div class="col" id="jugador1-container">
+                <h1>Jugador 1 - <small class="puntos-jugador">0</small></h1>
+                <div id="jugador1-cartas" class="cartas-jugador"></div>
+            </div>
+            <div class="col d-none" id="jugador2-container">
+                <h1>Jugador 2 - <small class="puntos-jugador">0</small></h1>
+                <div id="jugador2-cartas" class="cartas-jugador"></div>
+            </div>
+            <div class="col d-none" id="jugador3-container">
+                <h1>Jugador 3 - <small class="puntos-jugador">0</small></h1>
+                <div id="jugador3-cartas" class="cartas-jugador"></div>
+            </div>
+        </div>
+        <div class="row container mt-2 d-none" id="computadora-container">
+            <div class="col">
+                <h1>Computadora - <small class="puntos-jugador">0</small></h1>
+                <div id="computadora-cartas" class="cartas-jugador"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/underscore-min.js"></script>
+    <script src="assets/js/juego.js"></script>
+</body>
+</html>
